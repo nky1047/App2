@@ -1,0 +1,47 @@
+<h3 style="background-color: antiquewhite;">Add Administrator</h3>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<div class="row">
+  <div class="col-sm-4">This is 1-3 column here
+  </div>
+  <div class="col-sm-4">
+    <div [hidden]="submitted" style="width: 400px;">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Admin Name</label>
+          <input type="text" id="name" required [(ngModel)]="usr.adminName" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="password">Admin Password</label>
+          <input type="password" id="password" required [(ngModel)]="usr.adminPassword" name="password" class="form-control" title="Password">
+        </div>
+
+
+        <div class="form-group">
+          <label for="email">Admin Email</label>
+          <input type="text" id="email" required [(ngModel)]="usr.adminEmail" name="email" class="form-control" title="Email-Id">
+
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Admin Gender</label>
+          <select id="admin_gender" required [(ngModel)]="usr.adminGender" name="admin_gender" class="form-control" title="Gender">
+            <option value="null">--Select Gender--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Add Admin</button>
+        &nbsp;&nbsp;
+        <button type="reset" (click)="gotoList()">Cancel</button>
+        <br><br>
+        <button class="btn" style="background-color: coral;" (click)="newProduct()" >Reset</button>
+      </form>
+    </div>
+</div>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You have successfully added a new Admin!!!</h4>
+</div>
+<br>

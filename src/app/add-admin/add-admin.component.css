@@ -2,9 +2,6 @@ table{
     margin-left: 200px;
     width: 50%;
 }
-body {
-    
-}
 table,tr{
     border:coral solid 2px;
     background-color: yellow;
@@ -19,15 +16,7 @@ th{
     border: blueviolet solid 1px;
     background-color: darksalmon;
 }
-h2,h3,h4{
-    
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-}
-h1{
-   
+h1,h2,h3,h4{
     text-align: center;
     align-content: center;
     align-items: center;
@@ -36,4 +25,8 @@ h1{
 ul{
     margin-left:auto;
     margin-right: auto;
+}
+div{
+    font-color: white;
+    text-color: white;
 }
