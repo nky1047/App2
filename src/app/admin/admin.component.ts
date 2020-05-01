@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AdminService } from '../admin.service';
 import { Admin } from '../admin';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -42,5 +42,22 @@ export class AdminComponent implements OnInit {
   }
   detailsAdmin(id: number) {
     this.router.navigate(['details', id]);
+  }
+
+
+  goHome(){
+    this.router.navigate(['home']);
+  }
+  goAdmin(){
+    this.router.navigate(['admin']);
+  }
+  goAddAdmin(){
+    this.router.navigate(['addAdmin']);
+  }
+  goCustomer(){
+    this.router.navigate(['customer']);
+  }
+  goAddCustomer(){
+    this.router.navigate(['addCustomer']);
   }
 }

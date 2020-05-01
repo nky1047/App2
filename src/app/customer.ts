@@ -1,4 +1,4 @@
-export class Admin {
+export class Customer {
     cst_id:Number;
     cst_name:String;
     cst_password:String;

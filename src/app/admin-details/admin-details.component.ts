@@ -31,4 +31,14 @@ export class AdminDetailsComponent implements OnInit {
     this.router.navigate(['admin']);
   }
 
+
+  goHome(){
+    this.router.navigate(['home']);
+  }
+  goAdmin(){
+    this.router.navigate(['admin']);
+  }
+  goAddAdmin(){
+    this.router.navigate(['addAdmin']);
+  }
 }

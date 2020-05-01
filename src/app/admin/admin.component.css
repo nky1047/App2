@@ -3,19 +3,16 @@ table{
     width: 50%;
 }
 table,tr{
-    border:coral solid 2px;
     text-align: center;
-    background-color: yellow;
     margin-left: auto;
     margin-right: auto;
 }
 td{
-    border:gold solid 1px;
-    background-color: aquamarine;
     text-align: center;
+    border: chocolate solid 2px;
+    
 }
 th{
-    border: blueviolet solid 1px;
     text-align: center;
     background-color: darksalmon;
 }
@@ -24,6 +21,7 @@ h1,h2,h3,h4{
     align-content: center;
     align-items: center;
     align-self: center;
+
 }
 ul{
     margin-left:auto;

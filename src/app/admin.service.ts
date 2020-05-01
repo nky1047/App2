@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { Router } from '@angular/router';
 import {Admin} from './admin';
 
 @Injectable({
@@ -9,7 +10,7 @@ import {Admin} from './admin';
 export class  AdminService {
   private baseUrl="http://localhost:9090/admin/getAdmin";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router ) { }
 
   getAdminList(): Observable<any>{
     console.log('Get Admin list called!!')
@@ -32,5 +33,10 @@ export class  AdminService {
   updateAdmin(admin: Object): Observable<Object>{
     console.log('Update Admin called!')
     return this.http.put(`${this.baseUrl}/`,admin);
+  }
+  adminLogin(id:number, password:string): Observable<any>{
+    if(this.searchAdmin(id))
+    this.router.navigate(['/admin'])
+    return //this.http.request(`${this.baseUrl}/login`);
   }
 }

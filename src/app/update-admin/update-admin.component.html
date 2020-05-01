@@ -1,4 +1,15 @@
-<h3 style="background-color: firebrick;">Update Administrator</h3>
+
+
+<h1 style="background-color:salmon"> <b> Health Care Hospital</b></h1>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> 
+  <ul class="navbar-nav" style="margin-left:auto;margin-right: auto;">
+    <li class="nav-item "><a (click)="goHome()" routerLinkActive="active"  class="nav-link" class="btn btn-primary active" >Home</a></li>
+    <li class="nav-item "><a (click)="goAdmin()" routerLinkActive="active" class="nav-link" class="btn btn-primary active" role="button">View All Admins</a></li>
+    <li class="nav-item "><a (click)="goAddAdmin()" routerLinkActive="active" class="nav-link" class="btn btn-primary active" role="button">Add New Admin</a></li>
+  </ul>  
+</nav>
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
   integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <div class="row">
@@ -32,7 +43,7 @@
         </div>
         <button type="submit" class="btn btn-success">Update Admin</button>
         &nbsp;&nbsp;
-        <button type="reset" (click)="gotList()">Cancel</button>
+        <button type="reset" (click)="gotoList()">Cancel</button>
       </form>
     </div>
   </div>

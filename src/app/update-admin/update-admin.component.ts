@@ -36,13 +36,22 @@ export class UpdateAdminComponent implements OnInit {
       data=> console.log(data),
       error=>console.log(error)
     )
-    this.gotList();
+    this.gotoList();
   }
   onSubmit(){
     this.updateAdmin()
   }
-  gotList(){
+  gotoList(){
     this.router.navigate(['/admin'])
   }
 
+  goHome(){
+    this.router.navigate(['home']);
+  }
+  goAdmin(){
+    this.router.navigate(['admin']);
+  }
+  goAddAdmin(){
+    this.router.navigate(['addAdmin']);
+  }
 }

@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Admin } from '../admin';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-add-admin',
   templateUrl: './add-admin.component.html',
@@ -39,8 +40,15 @@ export class AddAdminComponent implements OnInit {
   }
 
   gotoList(){
-    this.router.navigate(['/admin']);
+    this.router.navigate(['admin']);
   }
- 
-
+  goHome(){
+    this.router.navigate(['home']);
+  }
+  goAdmin(){
+    this.router.navigate(['admin']);
+  }
+  goAddAdmin(){
+    this.router.navigate(['addAdmin']);
+  }
 }

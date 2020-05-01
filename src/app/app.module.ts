@@ -12,6 +12,10 @@ import { CustomerComponent } from './customer/customer.component';
 import { RouterModule } from '@angular/router';
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
 import { UpdateAdminComponent } from './update-admin/update-admin.component';
+import { HomeLoginComponent } from './home-login/home-login.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { UpdateAdminComponent } from './update-admin/update-admin.component';
     AddAdminComponent,
     CustomerComponent,
     AdminDetailsComponent,
-    UpdateAdminComponent
+    UpdateAdminComponent,
+    HomeLoginComponent,
+    AddCustomerComponent,
+    CustomerDetailsComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,
