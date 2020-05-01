@@ -18,7 +18,8 @@ export class  AdminService {
   }
 
   addAdmin(admin:object): Observable<Object>{
-    console.log('Add admin called!')
+    console.log('Add admin called! '+admin)
+    console.log( 'add admin service called --'+this.http.post(`${this.baseUrl}/`,admin))
     return this.http.post(`${this.baseUrl}/`,admin);
   }
 

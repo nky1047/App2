@@ -32,9 +32,11 @@ export class AddAdminComponent implements OnInit {
   }
 
   save(){
-    console.log('save called')
+    console.log('save called'+this.usr.adminName+this.usr.adminPassword)
     this.service.addAdmin(this.usr).subscribe(
-      data=>console.log(data),error=>console.log(error));
+      data=>console.log('data is '+data),
+      error=>console.log('error is '+error)
+      );
       this.usr=new Admin();
       this.gotoList();
   }
