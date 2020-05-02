@@ -12,6 +12,7 @@ import { Customer } from '../customer';
 })
 export class CustomerComponent implements OnInit {
   customer: Observable<Customer[]>;
+  usr= new Customer()
 
 
   customer_data: string[];

@@ -17,23 +17,27 @@
     </ul>
 </nav>
 
-<div *ngIf="usr">
+<div  *ngIf="usr">
 
     <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-            <div>
-                <label>Admin Id</label>{{usr.adminId}}
-            </div>
-            <div>
-                <label>Admin Name</label>{{usr.adminName}}
-            </div>
-            <div>
-                <label>Admin Gender</label>{{usr.adminGender}}
-            </div>
-            <div>
-                <label>Admin Email</label>{{usr.adminEmail}}
-            </div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>UserRole</th>
+                </tr>
+                <tr>
+                    <td>{{usr.id}}</td>
+                    <td>{{usr.name}}</td>
+                    <td>{{usr.gender}}</td>
+                    <td>{{usr.email}}</td>
+                    <td>{{usr.userRole}}</td>
+                </tr>
+            </table>
             <br><br>
             <button type="reset" (click)="gotoList()">Go Back</button>
         </div>

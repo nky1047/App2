@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Admin } from '../admin';
+import { Admin } from '../admin/admin';
 import { ActivatedRoute } from '@angular/router';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-admin-details',

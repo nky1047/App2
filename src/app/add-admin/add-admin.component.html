@@ -1,8 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
   integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-dark  navbar-dark">
   <ul class="navbar-nav" style="margin-left:auto;margin-right: auto;">
     <li class="nav-item "><a (click)="goHome()" routerLinkActive="active" class="nav-link"
         class="btn btn-primary active">Home</a></li>
@@ -20,33 +18,66 @@
   <div class="col-sm-4">This is 1-3 column here
   </div>
   <div class="col-sm-4">
-    <div [hidden]="submitted" style="width: 400px;">
+    <div [hidden]="submitted" class="container" style="width: 400px;" >
       <form (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="name">Admin Id</label>
-          <input type="text" id="id" required [(ngModel)]="usr.adminId" name="id" class="form-control">
+          <label for="userRole">User Role</label>
+          <input type="text"
+                 id="userRole" 
+                 name="userRole"
+                 class="form-control"
+                 title="userRole"
+                 [(ngModel)]="usr.userRole"
+                 required>
+        </div>
+        <div class="form-group">
+          <label for="id">Admin Id</label>
+          <input type="text"
+                 id="id"
+                 class="form-control"
+                 name="id"
+                 [(ngModel)]="usr.id"
+                 required>
+          TODO: remove this: {{usr.id}}
         </div>
         <div class="form-group">
           <label for="name">Admin Name</label>
-          <input type="text" id="name" required [(ngModel)]="usr.adminName" name="name" class="form-control">
+          <input type="text" 
+                 id="name"
+                 name="name"
+                 class="form-control"
+                 [(ngModel)]="usr.name"
+                 required>
+                 TODO: remove this: {{usr.name}}
         </div>
         <div class="form-group">
           <label for="password">Admin Password</label>
-          <input type="password" id="password" required [(ngModel)]="usr.adminPassword" name="password"
-            class="form-control" title="Password">
+          <input type="password"
+                 id="password" 
+                 name="password"
+                 class="form-control"
+                 title="Password"
+                 [(ngModel)]="usr.password"
+                 required>
         </div>
+        
 
 
         <div class="form-group">
           <label for="email">Admin Email</label>
-          <input type="text" id="email" required [(ngModel)]="usr.adminEmail" name="email" class="form-control"
-            title="Email-Id">
+          <input type="email"
+                 id="email"
+                 [(ngModel)]="usr.email"
+                 name="email"
+                 class="form-control"
+                 title="Email-Id"
+                 required >
 
         </div>
 
         <div class="form-group">
           <label for="gender">Admin Gender</label>
-          <select id="admin_gender" required [(ngModel)]="usr.adminGender" name="admin_gender" class="form-control"
+          <select id="gender" required  name="gender" class="form-control"   [(ngModel)]="usr.gender"
             title="Gender">
             <option value="null">--Select Gender--</option>
             <option value="Male">Male</option>

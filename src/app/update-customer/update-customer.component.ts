@@ -12,7 +12,7 @@ import { Customer } from '../customer';
 })
 export class UpdateCustomerComponent implements OnInit {
   id: number
-  usr: Customer
+  usr: Customer= new Customer();
 
   constructor(
     private route: ActivatedRoute,
@@ -33,18 +33,24 @@ export class UpdateCustomerComponent implements OnInit {
     );
   }
 
+  onSubmit(){
+    this.updateCustomer();
+  }
+
   updateCustomer(){
-  this.service.updateCustomer(this.usr).subscribe(
-    data=> console.log(data),
-    error=>console.log(error)
-  )
-  this.goCustomer();
+    this.service.updateCustomer(this.usr).subscribe(
+      data=> console.log(data),
+      error=>console.log(error)
+    )
+    this.gotoList();
   }
 
   detailsCustomer(id: number) {
     this.router.navigate(['customerDetails', id]);
   }
-
+  gotoList(){
+    this.router.navigate(['/customer'])
+  }
   goHome(){
     this.router.navigate(['home']);
   }

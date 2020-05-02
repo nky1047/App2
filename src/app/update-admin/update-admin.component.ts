@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Admin } from '../admin';
+import { Admin } from '../admin/admin';;
 import { ActivatedRoute } from '@angular/router';
 import { AdminService } from '../admin.service';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class UpdateAdminComponent implements OnInit {
   id: number
-  usr: Admin
+  usr: Admin = new Admin();
 
   constructor(
     private route: ActivatedRoute,

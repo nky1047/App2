@@ -12,7 +12,6 @@ import { CustomerService } from '../customer.service';
 })
 export class AddCustomerComponent implements OnInit {
   usr:Customer=new Customer();
-  
   submitted=false;
 
   constructor(private service:CustomerService,private router:Router) { }
@@ -26,14 +25,16 @@ export class AddCustomerComponent implements OnInit {
   }
   onSubmit(){
     console.log('on submit called')
-    this.submitted=true;
+    this.submitted=false;
     this.save();
   }
 
   save(){
     console.log('save called')
     this.service.addCustomer(this.usr).subscribe(
-      data=>console.log(data),error=>console.log(error));
+      data=>console.log(data),
+      error=>console.log(error)
+      );
       this.usr=new Customer();
       this.gotoList();
   }

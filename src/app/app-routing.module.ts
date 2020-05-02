@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddAdminComponent } from './add-admin/add-admin.component';
 import { AdminComponent } from './admin/admin.component';
-import { Admin } from './admin';
 import { AdminDetailsComponent } from './admin-details/admin-details.component';
 import { UpdateAdminComponent } from './update-admin/update-admin.component';
 import { HomeLoginComponent } from './home-login/home-login.component';
@@ -14,8 +13,8 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeLoginComponent },
-  { path: 'update/:id', component: UpdateAdminComponent },
-  { path: 'details/:id', component: AdminDetailsComponent },
+  { path: 'adminUpdate/:id', component: UpdateAdminComponent },
+  { path: 'adminDetails/:id', component: AdminDetailsComponent },
   { path: 'updateCustomer/:id', component: AddCustomerComponent },
   { path: 'customerDetails/:id', component: CustomerDetailsComponent },
   { path: 'admin', component: AdminComponent },

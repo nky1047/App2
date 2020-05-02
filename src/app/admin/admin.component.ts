@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { AdminService } from '../admin.service';
-import { Admin } from '../admin';
+import { Admin } from './admin';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -12,52 +11,49 @@ import { Router } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
   admin: Observable<Admin[]>;
-
-
-  admin_data: string[];
+  usr= new Admin()
   constructor(private service: AdminService, private router: Router) {
-    this.admin = service.getAdminList();
   }
 
   ngOnInit(): void {
     this.reloadData();
   }
   reloadData() {
-    console.log('reload Data called!!')
     this.admin = this.service.getAdminList();
   }
   deleteAdmin(id: number) {
     this.service.deleteAdmin(id)
-    .subscribe(
-      data => {
-        console.log(data);
-        this.reloadData();
-      },
-      error => console.log(error)
-    );
+      .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error)
+      );
   }
 
   updateAdmin(id: number) {
-    this.router.navigate(['update', id]);
+    this.router.navigate(['adminUpdate', id]);
   }
   detailsAdmin(id: number) {
-    this.router.navigate(['details', id]);
+    this.router.navigate(['adminDetails', id]);
   }
 
 
-  goHome(){
+  goHome() {
     this.router.navigate(['home']);
   }
-  goAdmin(){
+  goAdmin() {
     this.router.navigate(['admin']);
+    this.admin = this.service.getAdminList();
   }
-  goAddAdmin(){
+  goAddAdmin() {
     this.router.navigate(['addAdmin']);
   }
-  goCustomer(){
+  goCustomer() {
     this.router.navigate(['customer']);
   }
-  goAddCustomer(){
+  goAddCustomer() {
     this.router.navigate(['addCustomer']);
   }
 }

@@ -1,10 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AdminService } from '../admin.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Admin } from '../admin';
+import { Admin } from '../admin/admin';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-add-admin',
@@ -12,45 +9,44 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-admin.component.css']
 })
 export class AddAdminComponent implements OnInit {
-  usr:Admin=new Admin();
-  
-  submitted=false;
+  usr: Admin = new Admin();
+  submitted = false;
 
-  constructor(private service:AdminService,private router:Router) { }
+  constructor(private service: AdminService, private router: Router) { }
 
   ngOnInit(): void {
   }
-   
-  newProduct():void{
-    this.submitted=false;
-    this.usr=new Admin();
+
+  newProduct(): void {
+    this.submitted = false;
+    this.usr = new Admin();
   }
-  onSubmit(){
+  onSubmit() {
     console.log('on submit called')
-    this.submitted=true;
+    this.submitted = false;
     this.save();
   }
 
-  save(){
-    console.log('save called'+this.usr.adminName+this.usr.adminPassword)
+  save() {
+    console.log('save called')
     this.service.addAdmin(this.usr).subscribe(
-      data=>console.log('data is '+data),
-      error=>console.log('error is '+error)
-      );
-      this.usr=new Admin();
-      this.gotoList();
+      data => console.log(data),
+      error => console.log(error)
+    );
+    this.usr = new Admin();
+    this.gotoList();
   }
 
-  gotoList(){
+  gotoList() {
     this.router.navigate(['admin']);
   }
-  goHome(){
+  goHome() {
     this.router.navigate(['home']);
   }
-  goAdmin(){
+  goAdmin() {
     this.router.navigate(['admin']);
   }
-  goAddAdmin(){
+  goAddAdmin() {
     this.router.navigate(['addAdmin']);
   }
 }
