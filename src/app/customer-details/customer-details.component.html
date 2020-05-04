@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-<br>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <ul class="navbar-nav" style="margin-left:auto;margin-right: auto;">
         <li class="nav-item "><a (click)="goHome()" routerLinkActive="active" class="nav-link"
@@ -13,31 +12,39 @@
     </ul>
 </nav>
 
-<div  *ngIf="usr">
+<div *ngIf="usr">
 
-    <div class="row">
+    <div class="row" align="center">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
             <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Email</th>
-                    <th>UserRole</th>
+                <tr style="font-size: 30px;color: green;">
+                    <td>ID</td>
+                    <td>{{usr.id}}</td>
                 </tr>
                 <tr>
-                    <td>{{usr.id}}</td>
+                    <td>NAME</td>
                     <td>{{usr.name}}</td>
-                    <td>{{usr.gender}}</td>
+                </tr>
+                <tr>
+                    <td>EMAIL</td>
                     <td>{{usr.email}}</td>
-                    <td>{{usr.userRole}}</td>
+                </tr>
+                <tr>
+                    <td>AGE</td>
+                    <td>{{usr.age}}</td>
+                </tr>
+                <tr>
+                    <td>GENDER</td>
+                    <td>{{usr.gender}}</td>
+                </tr>
+                <tr>
+                    <td>PHONE NO</td>
+                    <td>{{usr.phoneno}}</td>
                 </tr>
             </table>
-            <br><br>
             <button type="reset" (click)="gotoList()">Go Back</button>
         </div>
-        <div class="col-sm-4"></div>
-
     </div>
+    <div class="col-sm-4"></div>
 </div>

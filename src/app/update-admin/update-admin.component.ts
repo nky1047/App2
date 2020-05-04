@@ -39,7 +39,7 @@ export class UpdateAdminComponent implements OnInit {
     this.gotoList();
   }
   onSubmit(){
-    this.updateAdmin()
+    this.updateAdmin();
   }
   gotoList(){
     this.router.navigate(['/admin'])

@@ -4,6 +4,7 @@ import { Observable, from } from 'rxjs';
 import { Router } from '@angular/router';
 import {CustomerService} from '../customer.service';
 import { Customer } from '../customer';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-customer',
@@ -16,8 +17,12 @@ export class CustomerComponent implements OnInit {
 
 
   customer_data: string[];
-  constructor(private service: CustomerService, private router: Router) {
+  constructor(private service: CustomerService,
+     private router: Router,
+     private loginService:AuthenticationService
+     ) {
     this.customer = service.getCustomerList();
+    this.router.navigate(['myappointment']);
   }
 
   ngOnInit(): void {
@@ -53,5 +58,11 @@ export class CustomerComponent implements OnInit {
   }
   goAddCustomer(){
     this.router.navigate(['addCustomer']);
+  }
+  goAddAppointment(){
+    this.router.navigate(['addappointment']);
+  }
+  goAppointments(){
+    this.router.navigate(['myappointment']);
   }
 }

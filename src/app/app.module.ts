@@ -15,6 +15,20 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
+import { MytestComponent } from './mytest/mytest.component';
+import { MydiagnosticcentreComponent } from './mydiagnosticcentre/mydiagnosticcentre.component';
+import { CreateTestComponent } from './create-test/create-test.component';
+import { CreateDiagnosticcentreComponent } from './create-diagnosticcentre/create-diagnosticcentre.component';
+import { MyappointmentComponent } from './myappointment/myappointment.component';
+import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
+import { UpdateTestComponent } from './update-test/update-test.component';
+import { UpdateAppointmentComponent } from './update-appointment/update-appointment.component';
+import { UpdateDiagnosticcentreComponent } from './update-diagnosticcentre/update-diagnosticcentre.component';
+import { LogoutComponent } from './logout/logout.component';
+import { ListOfTestsComponent } from './list-of-tests/list-of-tests.component';
+import { ListOfDiagnosticCentersComponent } from './list-of-diagnostic-centers/list-of-diagnostic-centers.component';
+
+
 
 @NgModule({
   declarations: [
@@ -27,7 +41,19 @@ import { UpdateCustomerComponent } from './update-customer/update-customer.compo
     HomeLoginComponent,
     AddCustomerComponent,
     CustomerDetailsComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+	MytestComponent,
+    MydiagnosticcentreComponent,
+    CreateTestComponent,
+    CreateDiagnosticcentreComponent,
+    MyappointmentComponent,
+    CreateAppointmentComponent,
+    UpdateTestComponent,
+    UpdateAppointmentComponent,
+    UpdateDiagnosticcentreComponent,
+    LogoutComponent,
+    ListOfTestsComponent,
+    ListOfDiagnosticCentersComponent
   ],
   imports: [
     BrowserModule,

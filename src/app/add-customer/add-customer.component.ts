@@ -40,7 +40,7 @@ export class AddCustomerComponent implements OnInit {
   }
 
   gotoList(){
-    this.router.navigate(['customer']);
+    this.router.navigate(['customer',this.usr.id]);
   }
   goHome(){
     this.router.navigate(['home']);

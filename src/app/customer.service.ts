@@ -32,7 +32,7 @@ export class CustomerService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
   updateCustomer(customer: Object): Observable<Object>{
-    console.log('Update customer called!')
+    console.log('Update Customer called!')
     return this.http.put(`${this.baseUrl}/`,customer);
   }
   customerLogin(id:number, password:string): Observable<any>{
@@ -40,4 +40,5 @@ export class CustomerService {
     this.router.navigate(['/customer'])
     return //this.http.request(`${this.baseUrl}/login`);
   }
+  
 }

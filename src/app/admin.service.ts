@@ -34,9 +34,4 @@ export class AdminService {
     console.log('Get Admin list called!!')
     return this.http.get(`${this.baseUrl}`);
   }
-  adminLogin(id: number, password: string): Observable<any> {
-    if (this.searchAdmin(id))
-      this.router.navigate(['/admin'])
-    return //this.http.request(`${this.baseUrl}/login`);
-  }
 }

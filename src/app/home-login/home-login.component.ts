@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { AdminService } from '../admin.service';
-import { Admin } from '../admin/admin';
 import { CustomerService } from '../customer.service';
+import {AuthenticationService} from '../service/authentication.service';
  
 @Component({
   selector: 'app-home-login',
@@ -11,8 +11,9 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./home-login.component.css']
 })
 export class HomeLoginComponent implements OnInit {
-id:number;
+id:string;
 password:string;
+invalidLogin=false;
 
 submitted=false;
 
@@ -20,7 +21,8 @@ submitted=false;
     private service1:AdminService,
     private service:CustomerService, 
     private router:Router,
-    private route:ActivatedRoute)  { }
+    private route:ActivatedRoute,
+    private loginservice: AuthenticationService)  { }
 
   ngOnInit(): void {
 
@@ -28,16 +30,23 @@ submitted=false;
   }
 
   
-  onSubmit1(){
-    this.service1.adminLogin(this.id,this.password)
-    console.log('onsubmit called!')
-    this.submitted=true;
+  checkLogin1(){
+    if (this.loginservice.authenticate(this.id, this.password)
+    ) {
+      this.router.navigate(['admin'])
+      this.invalidLogin = false
+    } else
+      this.invalidLogin = true
+    
   }
-
-  onSubmit(){
-    this.service.customerLogin(this.id,this.password)
-    console.log('onsubmit called!')
-    this.submitted=true;
+  checkLogin2(){
+    if (this.loginservice.authenticate(this.id, this.password)
+    ) {
+      this.router.navigate(['customer'])
+      this.invalidLogin = false
+    } else
+      this.invalidLogin = true
+    
   }
   
   signUp(){
