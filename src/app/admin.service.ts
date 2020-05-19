@@ -12,7 +12,6 @@ export class AdminService {
   constructor(private http: HttpClient, private router: Router) { }
 
   searchAdmin(id: Number): Observable<any> {
-    console.log('Search Admin called!')
     
     return this.http.get(`${this.baseUrl}/${id}`);
   }
@@ -22,16 +21,13 @@ export class AdminService {
   }
 
   updateAdmin(admin: Object): Observable<Object> {
-    console.log('Update Admin called!')
     return this.http.put(`${this.baseUrl}/`, admin);
   }
 
   deleteAdmin(id: Number): Observable<any> {
-    console.log('Delete  Admin called!')  
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
   getAdminList(): Observable<any> {
-    console.log('Get Admin list called!!')
     return this.http.get(`${this.baseUrl}`);
   }
 }

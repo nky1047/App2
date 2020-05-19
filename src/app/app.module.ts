@@ -25,6 +25,8 @@ import { UpdateTestComponent } from './update-test/update-test.component';
 import { UpdateAppointmentComponent } from './update-appointment/update-appointment.component';
 import { UpdateDiagnosticcentreComponent } from './update-diagnosticcentre/update-diagnosticcentre.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ListOfTestsComponent } from './list-of-tests/list-of-tests.component';
+import { ListOfDiagnosticCentersComponent } from './list-of-diagnostic-centers/list-of-diagnostic-centers.component';
 
 
 
@@ -49,8 +51,10 @@ import { LogoutComponent } from './logout/logout.component';
     UpdateTestComponent,
     UpdateAppointmentComponent,
     UpdateDiagnosticcentreComponent,
-    LogoutComponent
-    ],
+    LogoutComponent,
+    ListOfTestsComponent,
+    ListOfDiagnosticCentersComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

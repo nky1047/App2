@@ -22,13 +22,11 @@ export class AddAdminComponent implements OnInit {
     this.usr = new Admin();
   }
   onSubmit() {
-    console.log('on submit called')
     this.submitted = false;
     this.save();
   }
 
   save() {
-    console.log('save called')
     this.service.addAdmin(this.usr).subscribe(
       data => console.log(data),
       error => console.log(error)

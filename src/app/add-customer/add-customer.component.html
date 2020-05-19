@@ -40,6 +40,7 @@
                  id="name"  
                  [(ngModel)]="usr.name"
                  name="name" 
+                 pattern="[a-zA-Z]{3,10}"
                  class="form-control"
                  required>
         </div>
@@ -51,6 +52,8 @@
                  name="password"
                  class="form-control" 
                  title="Password"
+                 minlength="8"
+                 maxlength="15"
                  required>
         </div>
 
@@ -62,6 +65,7 @@
                  name="email" 
                  class="form-control"
                  title="Email-Id"
+                 pattern="[^ @]*@[^ @]*"
                  required>
         </div>
 
@@ -73,6 +77,8 @@
                  name="age" 
                  class="form-control"
                  title="Age"
+                 min="18"
+                 max="95"
                  required>
         </div>
 
@@ -84,6 +90,8 @@
                  name="phoneno" 
                  class="form-control"
                  title="PhoneNo"
+                 minlength="10"
+                 maxlength="10"
                  required>
         </div>
 
